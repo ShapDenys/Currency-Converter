@@ -1,6 +1,8 @@
 ﻿using CurrencyConverter;
 using Newtonsoft.Json;
 using System;
+using System.Text;
+using System.Linq;
 using System.Collections.Generic;
 using System.Net.Http;
 
@@ -29,7 +31,7 @@ namespace CurrencyExchange
         public Currency? GetFromCode(string code)
         {
             Currency? currency = currencies.Find(c => c.Code == code);
-            if (currency == null) throw new Exception("Nie znaleziono waluty o podanym kodzie");
+            if (currency == null) throw new Exception("No currency with such code");
             return currency;
         }
 
